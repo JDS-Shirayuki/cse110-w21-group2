@@ -1,9 +1,9 @@
 #  Meeting Record 
 
-### Time: 9:00 pm in China Time Zone, Jan 18, 2021 
-### Type: Status Update, Idea-Sharing, Team-Building
-### Tool: Zoom meeting
-### Member: Yichen Yang, Guo Chen, Yunding Wu, Haoyang Xie, Hang Wang, Zhichao Liu
+Time: 9:00 pm in China Time Zone, Jan 18, 2021 
+Type: Status Update, Idea-Sharing, Team-Building
+Tool: Zoom meeting
+Member: Yichen Yang, Guo Chen, Yunding Wu, Haoyang Xie, Hang Wang, Zhichao Liu
 
 ## Content:
 
