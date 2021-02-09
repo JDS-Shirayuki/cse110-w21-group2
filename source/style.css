@@ -1,0 +1,101 @@
+html{
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 138, 139, 0.85) 0%, rgba(255, 191, 172, 0.85) 100%);
+}
+
+#container{
+    background: radial-gradient(301.17% 150.36% at 50.04% -31.22%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    backdrop-filter: blur(12px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 45px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    height:900px;
+    width: 900px;
+}
+
+.navbar{
+    display:flex;
+    flex-direction: row;
+    margin-top: 3%;
+    margin-left: 8%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 36px;
+}
+
+#logo{
+    font-size: 24px;
+    color: #D54546;
+}
+
+.navbottons{
+    margin-left:auto;
+    margin-right:5%;
+}
+
+#home{
+    margin-right:50px;
+}
+
+a{
+    font-size: 18px;
+    color: #7F7D7D;
+    text-decoration:none;
+}
+
+#analyze{
+    margin-left: 80px;
+    padding: 10px;
+    font-size: 16px;
+    color:#FFFFFF;
+    background: linear-gradient(274.65deg, #D54546 1.05%, rgba(213, 69, 70, 0) 127.07%);
+    border-radius: 15px;
+}
+
+#slogan{
+    width:300px;
+    margin-top: 10%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 67px;
+    color: #000000;
+}
+
+
+#time{
+    margin-top: 120px;
+    margin-left: 100px;
+    font-family: 'Roboto Mono', monospace;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 65px;
+    line-height: 97px;
+    color: #000000;
+}
+
+.main-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-left: 8%;
+}
+
+#quick{
+    background: linear-gradient(274.65deg, #D54546 1.05%, rgba(213, 69, 70, 0) 127.07%);
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px 50px;
+    border-radius: 15px;
+    font-family: Poppins;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 42px;
+    color: #FFFFFF;
+}
