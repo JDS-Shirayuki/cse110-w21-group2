@@ -12,7 +12,7 @@ jobs:
       - name: Checks HTML5
         uses: Cyb3r-Jak3/html5validator-action@v0.4.2
         with:
-          root: "cse110-w21-group2/admin/Zhichao work/*.html"
+          root: "cse110-w21-group2/admin/Zhichao work/main.html"
       - uses: actions/upload-artifact@v2
         with:
           name: log
