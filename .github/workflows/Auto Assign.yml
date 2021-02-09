@@ -8,3 +8,12 @@ jobs:
       - uses: kentaro-m/auto-assign-action@v1.1.2
         with:
           configuration-path: ".github/timewaster.yml" # Only needed if you use something other than .github/auto_assign.yml
+      - uses: actions/checkout@v2 # Requried will all actions
+      - name: Checks HTML5
+        uses: Cyb3r-Jak3/html5validator-action@v0.4.2
+        with:
+          root: "cse110-w21-group2/admin/Zhichao work/*.html"
+      - uses: actions/upload-artifact@v2
+        with:
+          name: log
+          path: log.log
