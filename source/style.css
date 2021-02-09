@@ -1,6 +1,7 @@
 html{
     height: 100%;
     background: linear-gradient(180deg, rgba(255, 138, 139, 0.85) 0%, rgba(255, 191, 172, 0.85) 100%);
+    background-attachment:fixed;
 }
 
 #container{
@@ -10,18 +11,18 @@ html{
     backdrop-filter: blur(12px);
     /* Note: backdrop-filter has minimal browser support */
     border-radius: 45px;
-    margin-top: 20px;
+    margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
-    height:900px;
-    width: 900px;
+    height:800px;
+    width: 800px;
 }
 
 .navbar{
     display:flex;
     flex-direction: row;
     margin-top: 3%;
-    margin-left: 8%;
+    margin-left: 50px;
     font-family: Poppins;
     font-style: normal;
     font-weight: 500;
@@ -29,7 +30,7 @@ html{
 }
 
 #logo{
-    font-size: 24px;
+    font-size: 30px;
     color: #D54546;
 }
 
@@ -38,8 +39,8 @@ html{
     margin-right:5%;
 }
 
-#home{
-    margin-right:50px;
+.navbotton{
+    margin-right:20px;
 }
 
 a{
@@ -50,7 +51,7 @@ a{
 
 #analyze{
     margin-left: 80px;
-    padding: 10px;
+    padding: 10px 20px;
     font-size: 16px;
     color:#FFFFFF;
     background: linear-gradient(274.65deg, #D54546 1.05%, rgba(213, 69, 70, 0) 127.07%);
@@ -58,24 +59,26 @@ a{
 }
 
 #slogan{
-    width:300px;
-    margin-top: 10%;
+    margin-left: 50px;
+    width:400px;
+    margin-top: 50px;
     font-family: Poppins;
     font-style: normal;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 30px;
     line-height: 67px;
     color: #000000;
+    line-height:150%;
 }
 
 
 #time{
-    margin-top: 120px;
-    margin-left: 100px;
+    margin-top: 60px;
+    margin-left: -50px;
     font-family: 'Roboto Mono', monospace;
     font-style: normal;
     font-weight: bold;
-    font-size: 65px;
+    font-size: 55px;
     line-height: 97px;
     color: #000000;
 }
@@ -83,10 +86,11 @@ a{
 .main-container{
     display: grid;
     grid-template-columns: auto auto;
-    margin-left: 8%;
 }
 
 #quick{
+    margin-top: -60px;
+    margin-left: 80px;
     background: linear-gradient(274.65deg, #D54546 1.05%, rgba(213, 69, 70, 0) 127.07%);
     border: none;
     text-align: center;
@@ -96,6 +100,13 @@ a{
     font-family: Poppins;
     font-style: normal;
     font-size: 20px;
-    line-height: 42px;
     color: #FFFFFF;
 }
+
+#pic{
+    margin-left: -1100px;
+    margin-top: 370px;
+    position: absolute; z-index: 1;
+    zoom: 33%;
+}
+
