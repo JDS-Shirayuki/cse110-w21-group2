@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>PomoTracker</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id=container>
+            <div class=navbar>
+                <span id=logo>PomoTracker.</span>
+                <div class=navbottons>
+                    <a class=navbotton style="color: #D54546;" href="#home">Home</a>
+                    <a class=navbotton href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                    <a id=analyze href="#analyze" class=buttons>Analyze</a>
+                </div>
+            </div>
+            <div class=main-container>
+                <div class=leftcol>
+                    <p id=slogan><span style="font-size: 50px;">Focus</span><br> & track your progress with PomoTracker.</p>
+                    <input type="button" value="Quick Start" id=quick class=buttons>
+                    <img id=pic src='pic.png' alt='computer and books'>
+                </div>
+                <div class=rightcol>
+                    <div id="timer">
+                        <div id="time">25:00</div>
+                        
+                    </div>
+                    <div id=info>
+                        <div class=subinfo id=typeselect>
+                            <span class=subinfo_name>Type of task</span><br>
+                            <input type="radio" id="type1" name="type" value="study">
+                            <label for="type1">Study</label>
+                            <input type="radio" id="type2" name="type" value="work">
+                            <label for="type2">Work</label>
+                            <input type="radio" id="type3" name="type" value="think">
+                            <label for="type3">Thinking</label>
+                            <input type="radio" id="type4" name="type" value="read">
+                            <label for="type4">Reading</label>
+                        </div>
+                        <div class=subinfo id=inputnotes>
+                            <span class=subinfo_name>Notes</span><br>
+                            <input id="notes" name="notes">
+                        </div>
+                        <div class=subinfo id=inputnum>
+                            <span class=subinfo_name># of Pomos</span><br>
+                            <input type="number" id="input_num" name="input_num">
+                        </div>
+                    </div>
+                    <input type="button" value="Start" id="go" class=buttons disabled/>
+                </div>
+
+                
+            </div>
+            <pre>
+
+
+
+
+            </pre>
+        </div>
+        <script src="main.js"></script>
+    </body>  
+</html>
