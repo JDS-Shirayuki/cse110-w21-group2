@@ -50,7 +50,7 @@ a{
 }
 
 #analyze{
-    margin-left: 80px;
+    margin-left: 30px;
     padding: 10px 20px;
     font-size: 16px;
     color:#FFFFFF;
@@ -90,6 +90,7 @@ a{
 
 #timer{
     margin-top: 30px;
+    margin-left: 35px;
 }
 
 .main-container{
@@ -121,7 +122,7 @@ a{
 }
 
 .subinfo{
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .buttons{
@@ -133,11 +134,73 @@ a{
     font-family: Poppins;
     font-style: normal;
     color: #FFFFFF;
+    outline: none;
+    cursor: pointer;
+}
+
+.buttons:hover{
+    background-color: white;
 }
 
 #go{
-    margin-top: 30px;
+    margin-top: 40px;
+    margin-left: 70px;
     width:170px;
-    height:40px;
-    font-size: 20px;
+    height:50px;
+    font-size: 30px;
 }
+
+.inputbar{
+    background: #FFFFFF;
+    border-radius: 50px;
+    border:#FFFFFF;
+    width: 290px;
+    padding: 6px 10px;
+    outline: none;
+}
+
+#inputtypes{
+    display: flex;
+    justify-content: space-between;
+    background: #FFFFFF;
+    border-radius: 50px;
+    border:#FFFFFF;
+    width: 310px;
+    outline: none;
+    padding: 0px 0px;
+    
+}
+
+input[type="text"], input[type="number"]{
+    font-family: Poppins;
+    font-style: normal;
+    font-size: 16px;
+}
+
+label{
+    text-align: center;
+    font-family: Poppins;
+    font-style: normal;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 6px 10px;
+    margin-left:-100px;
+}
+
+#label1{
+    margin-left:0px;
+}
+
+
+input[type=radio] {
+    visibility: hidden;
+    display: none;
+}
+
+input[type=radio]:checked + label{
+    background-color: #D54546;
+    border-radius: 50px;
+    color: white;
+}
+
+

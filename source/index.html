@@ -31,38 +31,35 @@
                         <div id="time">25:00</div>
                         
                     </div>
-                    <div id=info>
-                        <div class=subinfo id=typeselect>
-                            <span class=subinfo_name>Type of task</span><br>
-                            <input type="radio" id="type1" name="type" value="study">
-                            <label for="type1">Study</label>
-                            <input type="radio" id="type2" name="type" value="work">
-                            <label for="type2">Work</label>
-                            <input type="radio" id="type3" name="type" value="think">
-                            <label for="type3">Thinking</label>
-                            <input type="radio" id="type4" name="type" value="read">
-                            <label for="type4">Reading</label>
+                    <form>
+                        <div class=subinfo>
+                            <span class=subinfo_name>Task Type</span><br>
+                            <div id=inputtypes>
+                                <input type="radio" id="type1" name="type" value="study">
+                                <label id="label1" for="type1">Study</label>
+                                <input type="radio" id="type2" name="type" value="work">
+                                <label for="type2">Work</label>
+                                <input type="radio" id="type3" name="type" value="think">
+                                <label for="type3">Think</label>
+                                <input type="radio" id="type4" name="type" value="read">
+                                <label for="type4">Read</label>
+                                <input type="radio" id="type5" name="type" value="cutsom">
+                                <label for="type5">Cutsom</label>
+                            </div>
                         </div>
                         <div class=subinfo id=inputnotes>
                             <span class=subinfo_name>Notes</span><br>
-                            <input id="notes" name="notes">
+                            <input type="text" class="inputbar" id="notes" name="notes" value="Typing...">
                         </div>
                         <div class=subinfo id=inputnum>
                             <span class=subinfo_name># of Pomos</span><br>
-                            <input type="number" id="input_num" name="input_num">
+                            <input type="number" class="inputbar" id="input_num" name="input_num" min="1" value="4">
                         </div>
-                    </div>
+                    </form>
                     <input type="button" value="Start" id="go" class=buttons disabled/>
                 </div>
-
                 
             </div>
-            <pre>
-
-
-
-
-            </pre>
         </div>
         <script src="main.js"></script>
     </body>  
