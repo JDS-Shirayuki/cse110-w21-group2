@@ -14,6 +14,7 @@ Demo Presentation (on 2/16 PST)
   2. UI design (design philosophy or process) - "Chen Guo"
   3. Demo go-through - "Yunding"
   4. Unfinished parts and future dev plans - "Zhichao"
+  
   Preparation work:
     a. Speech paper
     b. Mock presentation
