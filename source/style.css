@@ -166,9 +166,7 @@ a{
     border-radius: 50px;
     border:#FFFFFF;
     width: 310px;
-    outline: none;
-    padding: 0px 0px;
-    
+    outline: none;  
 }
 
 input[type="text"], input[type="number"]{
@@ -201,6 +199,40 @@ input[type=radio]:checked + label{
     background-color: #D54546;
     border-radius: 50px;
     color: white;
+    padding: 6px 10px;
 }
 
+input[type=range] {
+    cursor: pointer;
+    border-radius: 50px;
+    background:black;
+}
 
+#pomonum{
+    display: flex;
+    justify-content: space-between;
+    background: #FFFFFF;
+    border-radius: 50px;
+    border:#FFFFFF;
+    width: 310px;
+    height: 37px;
+    outline: none;
+    padding: 0px 0px;
+}
+
+#num1{
+    margin-left:0px;
+}
+
+.tomato{
+    font-size: 28px;
+    margin-left: 0px;
+    padding: 0px 20px;
+    line-height: 37px;
+}
+
+.tomatoradio:checked + .tomato {
+    background-color: #D54546;
+    border-radius: 50px;
+    padding: 0px 20px;
+}

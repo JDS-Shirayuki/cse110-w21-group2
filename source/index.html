@@ -35,7 +35,7 @@
                         <div class=subinfo>
                             <span class=subinfo_name>Task Type</span><br>
                             <div id=inputtypes>
-                                <input type="radio" id="type1" name="type" value="study">
+                                <input type="radio" id="type1" name="type" value="study" checked>
                                 <label id="label1" for="type1">Study</label>
                                 <input type="radio" id="type2" name="type" value="work">
                                 <label for="type2">Work</label>
@@ -44,7 +44,7 @@
                                 <input type="radio" id="type4" name="type" value="read">
                                 <label for="type4">Read</label>
                                 <input type="radio" id="type5" name="type" value="cutsom">
-                                <label for="type5">Cutsom</label>
+                                <label for="type5">Custom</label>
                             </div>
                         </div>
                         <div class=subinfo id=inputnotes>
@@ -53,7 +53,16 @@
                         </div>
                         <div class=subinfo id=inputnum>
                             <span class=subinfo_name># of Pomos</span><br>
-                            <input type="number" class="inputbar" id="input_num" name="input_num" min="1" value="4">
+                            <div id=pomonum>
+                                <input class=tomatoradio type="radio" id="1pomo" name="num" value="1" checked>
+                                <label class=tomato id="num1" for="1pomo">🍅</label>
+                                <input class=tomatoradio type="radio" id="2pomo" name="num" value="2">
+                                <label class=tomato id="num2" for="2pomo">🍅</label>
+                                <input class=tomatoradio type="radio" id="3pomo" name="num" value="3">
+                                <label class=tomato id="num3" for="3pomo">🍅</label>
+                                <input class=tomatoradio type="radio" id="4pomo" name="num" value="4">
+                                <label class=tomato id="num4" for="4pomo">🍅</label>
+                            </div>
                         </div>
                     </form>
                     <input type="button" value="Start" id="go" class=buttons disabled/>
