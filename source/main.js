@@ -55,7 +55,7 @@
     },
 
     start: function() {
-        ptimer.timer = setInterval(ptimer.tick, 1000);
+        ptimer.timer = setInterval(ptimer.tick, 5);
         ptimer.go.value = "Stop";
         ptimer.go.removeEventListener("click",ptimer.start);
         ptimer.go.addEventListener("click",ptimer.stop);
@@ -70,6 +70,8 @@
         ptimer.go.removeEventListener("click",ptimer.stop);
         ptimer.go.addEventListener("click", ptimer.start);
         ptimer.time.style.borderColor = "#D54546";
+        alert('This session you completed ' + ptimer.count+ ' pomos! Congrats!');
+        ptimer.count = 0; 
     }
 
 
