@@ -51,11 +51,11 @@
             return;
         }
 
-        ptimer.time.innerHTML = mins+":"+secs;
+        ptimer.time.innerHTML = mins+" : "+secs;
     },
 
     start: function() {
-        ptimer.timer = setInterval(ptimer.tick, 5);
+        ptimer.timer = setInterval(ptimer.tick, 50);
         ptimer.go.value = "Stop";
         ptimer.go.removeEventListener("click",ptimer.start);
         ptimer.go.addEventListener("click",ptimer.stop);
