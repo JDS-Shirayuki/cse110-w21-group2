@@ -1,0 +1,260 @@
+html{
+    height: 100%;
+    background: linear-gradient(180deg, #FF8A8B 0%, #FFBFAC 100%);
+    background-attachment:fixed;
+}
+
+#container{
+    background: radial-gradient(301.17% 150.36% at 50.04% -31.22%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    backdrop-filter: blur(12px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 45px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    height:800px;
+    width: 1103px;
+}
+
+.navbar{
+    display:flex;
+    flex-direction: row;
+    margin-top: 3%;
+    margin-left: 50px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 36px;
+}
+
+#logo{
+    font-size: 30px;
+    color: #D54546;
+}
+
+.navbottons{
+    margin-left:auto;
+    margin-right:5%;
+}
+
+.navbotton{
+    margin-right:20px;
+}
+
+a{
+    font-size: 18px;
+    color: #7F7D7D;
+    text-decoration:none;
+}
+
+#analyze{
+    margin-left: 30px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color:#FFFFFF;
+    background: linear-gradient(274.65deg, #D54546 1.05%, rgba(213, 69, 70, 0) 127.07%);
+    border-radius: 15px;
+}
+
+
+#time{
+    text-align: center;
+    z-index : 1;
+    position:relative;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 85px;
+    line-height: 97px;
+    color: #FFFFFF;
+    width: 371px;
+    height: 371px;
+    line-height: 371px;
+    border: solid 27px;
+    border-radius: 50%;
+    border-color: #D54546;
+    font-variant-numeric: tabular-nums;
+}
+
+#timer{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    overflow:hidden;
+    /*border : 5px solid red;*/
+    border-radius:50%;
+    width:425px;
+    height:425px;
+    transform: translate(-50%, -50%);
+}
+
+#filler{
+    background : #ddffcc;
+    height: 0px;
+    width: 425px;
+    position:absolute;
+    bottom:0;
+  }
+
+#skip{
+    position: absolute;
+    width: 368px;
+    height: 60px;
+    left: 34%;
+    top: 700px;
+    font-family: times;
+    font-size : 20px;
+}
+
+#Quote{
+    position: absolute;
+    width: 500px;
+    height: 60px;
+    left: 28%;
+    top: 600px;
+    text-align: center;
+}
+
+#quick{
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: inset 0px 4px 4px #D54546;
+    padding: 10px 50px;
+    font-size: 20px;
+}
+
+#pic{
+    margin-left: -1100px;
+    margin-top: 340px;
+    position: absolute; z-index: 1;
+    zoom: 33%;
+}
+
+.subinfo_name{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 42px;
+    color: #000000;
+}
+
+.subinfo{
+    margin-top: 30px;
+}
+
+.buttons{
+    background: linear-gradient(274.65deg, #D54546 1.05%, rgba(213, 69, 70, 0) 127.07%);
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 15px;
+    font-family: Poppins;
+    font-style: normal;
+    color: #FFFFFF;
+    outline: none;
+    cursor: pointer;
+}
+
+.buttons:hover{
+    background-color: white;
+}
+
+#go{
+    margin-top: 40px;
+    margin-left: 70px;
+    width:170px;
+    height:50px;
+    font-size: 30px;
+}
+
+.inputbar{
+    background: #FFFFFF;
+    border-radius: 50px;
+    border:#FFFFFF;
+    width: 290px;
+    padding: 6px 10px;
+    outline: none;
+}
+
+#inputtypes{
+    display: flex;
+    justify-content: space-between;
+    background: #FFFFFF;
+    border-radius: 50px;
+    border:#FFFFFF;
+    width: 310px;
+    outline: none;  
+}
+
+input[type="text"], input[type="number"]{
+    font-family: Poppins;
+    font-style: normal;
+    font-size: 16px;
+}
+
+label{
+    text-align: center;
+    font-family: Poppins;
+    font-style: normal;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 6px 10px;
+    margin-left:-100px;
+}
+
+#label1{
+    margin-left:0px;
+}
+
+
+input[type=radio] {
+    visibility: hidden;
+    display: none;
+}
+
+input[type=radio]:checked + label{
+    background-color: #D54546;
+    border-radius: 50px;
+    color: white;
+    padding: 6px 10px;
+}
+
+input[type=range] {
+    cursor: pointer;
+    border-radius: 50px;
+    background:black;
+}
+
+#pomonum{
+    display: flex;
+    justify-content: space-between;
+    background: #FFFFFF;
+    border-radius: 50px;
+    border:#FFFFFF;
+    width: 310px;
+    height: 37px;
+    outline: none;
+    padding: 0px 0px;
+}
+
+#num1{
+    margin-left:0px;
+}
+
+.tomato{
+    font-size: 28px;
+    margin-left: 0px;
+    padding: 0px 20px;
+    line-height: 37px;
+}
+
+.tomatoradio:checked + .tomato {
+    background-color: #D54546;
+    border-radius: 50px;
+    padding: 0px 20px;
+}

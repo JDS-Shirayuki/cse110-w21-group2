@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>PomoTracker</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    </head>
 
+    <body>
+        <div id=container>
+            <div class=navbar>
+                <span id=logo>PomoTracker.</span>
+                <div class=navbottons>
+                    <a class=navbotton style="color: #D54546;" href="#home">Home</a>
+                    <a class=navbotton href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                    <a id=analyze href="#analyze" class=buttons>Analyze</a>
+                </div>
+            </div>
+            <div class=main-container>
+                <div id="timer">
+                    <div id="time">25 : 00</div>
+                    <div id="filler"></div>
+                </div>
+                <p id=Quote>
+                    <span style="font-size: 18px;color:white;">Inspiration quote,
+                    This would be a inspiration quote, </br>
+                     randomly selected from data base.
+                    </span>
+                </p>
+                <input type="button" value="SKIP" id="skip" class=buttons disabled/>
+            </div>
+        </div>
+        <script src="main.js"></script>
+    </body>  
+</html>
