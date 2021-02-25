@@ -1,9 +1,18 @@
-  let ptimer = {
+let ptimer = {
     time: null,
     go: null,
+    fillerHeight : 0,
+    fillerIncrement : 425/(25*60),
+    filler: null,
+    progress: null,
+    progress_number: null,
+
     init: function() {
         ptimer.time = document.getElementById("time");
-        ptimer.go = document.getElementById("go");
+        ptimer.go = document.getElementById("skip");
+        ptimer.filler = document.getElementById("filler");
+        ptimer.progress = document.getElementById("progress");
+        ptimer.progress_number = document.getElementById("number");
 
         ptimer.go.addEventListener("click",ptimer.start);
         ptimer.go.disabled = false;
@@ -29,15 +38,19 @@
                 ptimer.count++;
                 ptimer.break = true;
                 ptimer.time.style.borderColor = "green";
+                this.filler.style.background = 'yellow';
+                ptimer.fillerHeight = 0;
                 //short break
                 if (ptimer.count % 4 != 0) {
                     ptimer.now = 300;
                     ptimer.time.innerHTML = "05:00";
+                    ptimer.fillerIncrement = 425/(5*60);
                 }
                 //long break
                 else {
                     ptimer.now = 900;
                     ptimer.time.innerHTML = "15:00";
+                    ptimerfillerIncrement = 425/(15*60);
                 }
             }
             
@@ -47,16 +60,24 @@
                 ptimer.now = 1500;
                 ptimer.time.innerHTML = "25:00";
                 ptimer.time.style.borderColor = "#D54546";
+                ptimer.fillerHeight = 0;
+                ptimer.fillerIncrement = 425/(25*60);
+                this.filler.style.background = '#ddffcc';
             }
             return;
         }
 
-        ptimer.time.innerHTML = mins+":"+secs;
+        ptimer.time.innerHTML = mins+" : "+secs;
+        ptimer.fillerHeight = ptimer.fillerHeight + ptimer.fillerIncrement;
+        ptimer.filler.style.height = ptimer.fillerHeight + 'px';
+
+        ptimer.progress.style.width = 80 * (ptimer.count) + 'px';
+        ptimer.progress_number.innerHTML = ptimer.count + ' / 5';
     },
 
     start: function() {
-        ptimer.timer = setInterval(ptimer.tick, 5);
-        ptimer.go.value = "Stop";
+        ptimer.timer = setInterval(ptimer.tick, 50);
+        ptimer.go.value = "End";
         ptimer.go.removeEventListener("click",ptimer.start);
         ptimer.go.addEventListener("click",ptimer.stop);
     },
@@ -72,11 +93,17 @@
         ptimer.time.style.borderColor = "#D54546";
         alert('This session you completed ' + ptimer.count+ ' pomos! Congrats!');
         ptimer.count = 0; 
+        ptimer.fillerHeight = 0;
+        ptimer.fillerIncrement = 425/(25*60);
+        ptimer.filler.style.height = '0px';
+        this.filler.style.background = '#ddffcc';
+        ptimer.progress.style.width = '0px';
+        ptimer.progress_number.innerHTML = '0 / 5';
     }
 
 
 };
-
+/*
 let pomo1 = document.getElementById('1pomo');
 let pomo2 = document.getElementById('2pomo');
 let pomo3 = document.getElementById('3pomo');
@@ -130,8 +157,6 @@ pomo4.onclick = function() {
     num3.style.borderRadius = '0px';
     num4.style.borderRadius = '0px 50px 50px 0px';
 }
-
-
+*/
 
 window.onload = ptimer.init;
-
