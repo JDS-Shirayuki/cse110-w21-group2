@@ -138,8 +138,6 @@ let ptimer = {
         ptimer.go.removeEventListener("click",ptimer.abort);
         ptimer.go.addEventListener("click", ptimer.start);
         
-        alert('Your will lose the progress of the current pomo!')
-
         homePage();
 
         ptimer.count = 0; 
@@ -148,7 +146,7 @@ let ptimer = {
 
 
 function homePage() {
-    ptimer.time.style.borderColor = "#D54546";
+    ptimer.time.style.borderColor = "rgba(240, 240, 240, 0.25)";
     html.style.background="linear-gradient(180deg, #FF8A8B 0%, #FFBFAC 100%)"
     nav_bar.style.display='flex';
     rate.style.display = 'none';  
@@ -156,7 +154,7 @@ function homePage() {
     form.style.display = 'grid';
     ptimer.go.style.color="#D54546";
     ptimer.filler.style.height = '0px';
-    ptimer.filler.style.background = '#81C57C';
+    ptimer.filler.style.background = '#47a840';
     progress.style.width = '0px';
     progress_number.innerHTML = '0 / ' + ptimer.pomo_num;
 }
@@ -170,17 +168,17 @@ function pomoPage() {
 
 function breakPage() {
     html.style.background="linear-gradient(180deg, #A5CFA2 0%, #B7CCA4 99.99%, #FFBFAC 100%)"
-    ptimer.time.style.borderColor = "#81C57C";
+    ptimer.time.style.borderColor = "rgba(240, 240, 240, 0.25)";
     ptimer.filler.style.background = '#D54546';
     fillerHeight = 0;
-    progress.style.background="#81C57C";
-    ptimer.go.style.color="#81C57C";
+    progress.style.background="#47a840";
+    ptimer.go.style.color="#47a840";
 }
 
 function focusPage() {
     html.style.background="linear-gradient(180deg, #FF8A8B 0%, #FFBFAC 100%)"
-    ptimer.time.style.borderColor = "#D54546";
-    ptimer.filler.style.background = '#81C57C';
+    ptimer.time.style.borderColor = "rgba(240, 240, 240, 0.25)";
+    ptimer.filler.style.background = '#47a840';
     fillerHeight = 0;
     progress.style.background="#D54546";
     ptimer.go.style.color="#D54546";

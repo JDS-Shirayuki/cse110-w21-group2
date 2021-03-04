@@ -80,7 +80,8 @@ a{
     line-height: 371px;
     border: solid 27px;
     border-radius: 50%;
-    border-color: #D54546;
+    border-color: rgba(240, 240, 240, 0.25);
+    background-color: rgba(255,255,255, 0.2);
     font-variant-numeric: tabular-nums;
 }
 
@@ -127,7 +128,7 @@ a{
 }
 
 #filler{
-    background : #81C57C;
+    background : #47a840;
     height: 0px;
     width: 425px;
     position:absolute;
