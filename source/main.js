@@ -138,6 +138,8 @@ let ptimer = {
         ptimer.go.removeEventListener("click",ptimer.abort);
         ptimer.go.addEventListener("click", ptimer.start);
         
+        alert('Your will lose the progress of the current pomo!')
+
         homePage();
 
         ptimer.count = 0; 
