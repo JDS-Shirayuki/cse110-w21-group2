@@ -8,6 +8,8 @@ let quote = document.getElementById("quote");
 let html = document.documentElement;
 let progress = document.getElementById('progress');
 let progress_number = document.getElementById("number");
+let goal_finish = document.getElementById('goal_finish');
+let clock = document.getElementById('timer');
 
 let ptimer = {
     time: null,
@@ -49,11 +51,18 @@ let ptimer = {
             if (ptimer.break == false) {
 
                 ptimer.count++;
+                progress.style.width = (400/ptimer.pomo_num) * (ptimer.count) + 'px';
+                progress_number.innerHTML = ptimer.count + ' /  ' + ptimer.pomo_num;
+
+                if (ptimer.count == ptimer.pomo_num) {
+                    promptPage();
+                    ptimer.resetTimer();
+                    return;
+                }
+
                 ptimer.break = true;
                 breakPage();
 
-                progress.style.width = (400/ptimer.pomo_num) * (ptimer.count) + 'px';
-                progress_number.innerHTML = ptimer.count + ' /  ' + ptimer.pomo_num;
                 //short break
                 if (ptimer.count % 4 != 0) {
                     ptimer.now = 300;
@@ -98,29 +107,40 @@ let ptimer = {
         }
         
         ptimer.go.value = "Stop";
-        ptimer.timer = setInterval(ptimer.tick, 1000);
+        ptimer.timer = setInterval(ptimer.tick, 1);
         ptimer.go.removeEventListener("click",ptimer.start);
-        ptimer.go.addEventListener("click",ptimer.stop);
+        ptimer.go.addEventListener("click",ptimer.abort);
 
         progress_number.innerHTML = 0 + ' /  ' + ptimer.pomo_num;
 
         pomoPage();
     },
 
-    stop: function() {
+    resetTimer: function() {
         clearInterval(ptimer.timer);
         ptimer.timer = null;
-        ptimer.go.value = "Start";
         ptimer.now = 1500;
         ptimer.time.innerHTML = '25 : 00';
-        ptimer.go.removeEventListener("click",ptimer.stop);
+        fillerHeight = 0;
+        fillerIncrement = 425/(25*60);
+    },
+
+    finishGoal: function() {
+        ptimer.resetTimer();
+        promptPage();
+        ptimer.go.removeEventListener("click",ptimer.abort);
+        ptimer.go.addEventListener("click", ptimer.start);
+    },
+
+    abort: function() {
+        ptimer.resetTimer();
+        ptimer.go.value = "Start";
+        ptimer.go.removeEventListener("click",ptimer.abort);
         ptimer.go.addEventListener("click", ptimer.start);
         
         homePage();
 
         ptimer.count = 0; 
-        fillerHeight = 0;
-        fillerIncrement = 425/(25*60);
     }
 };
 
@@ -163,5 +183,12 @@ function focusPage() {
     progress.style.background="#D54546";
     ptimer.go.style.color="#D54546";
 }
+
+function promptPage() {
+    goal_finish.style.display = "block";
+    clock.style.display = 'none';
+    ptimer.go.style.display = 'none';
+}
+
 
 window.onload = ptimer.init;

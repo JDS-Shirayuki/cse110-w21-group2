@@ -63,7 +63,7 @@
                             <span id=enter_num>
                                 <input class=tomatoradio type="radio" id="numpomo" name="num">
                                 <label class=tomato id="numCus" for="numpomo">✏️</label>
-                                <input type="number" min="5" max="20" step="1" class="inputbar" value="5" id="num_text">
+                                <input type="number" min="5" max="60" step="1" class="inputbar" value="5" id="num_text">
                             </span>
                         </span>
                     </div>
@@ -81,6 +81,15 @@
                     </span>
                 </p>
                 <input type="button" value="Start" id="skip" class=buttons disabled/>
+            </div>
+
+        <div id=goal_finish>
+            <span id=cong>Congrats!</span>
+            <span id=prompt>You have finished your pomo goal!
+                <br> You can now <span style="color:#D54546">continue</span> with the current task or <span style="color:#D54546">finish</span> the task.</span>
+            <div id = prompt_buttons>
+                <input type="button" value="Continue" id="continue" class=buttons>
+                <input type="button" value="Finish" id="finish" class=buttons>
             </div>
         </div>
         <script src="main.js"></script>

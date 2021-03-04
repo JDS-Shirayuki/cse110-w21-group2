@@ -93,7 +93,7 @@ a{
 
 #timer{
     position: absolute;
-    top: 40%;
+    top: 37%;
     left: 50%;
     overflow:hidden;
     border-radius:50%;
@@ -140,7 +140,7 @@ a{
     width: 170px;
     height: 50px;
     left: 42%;
-    top: 730px;
+    top: 90%;
     font-size : 30px;
     display:block;
 }
@@ -158,7 +158,7 @@ a{
 
 #form_info{
     position: absolute;
-    top: 65%;
+    top: 62%;
     left:20%;
     display: grid;
     grid-template-columns: auto auto;
@@ -318,4 +318,54 @@ input[type=number] {
 
 #enter_num {
     display: inline-flex;
+}
+
+#cong {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 90px;
+    font-weight: 600;
+    color:#D54546;
+}
+
+#goal_finish {
+    display: none;
+}
+
+#prompt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    font-family: Poppins;
+    font-size: 30px;
+    font-weight: 600;
+    color: black;
+}
+
+#continue {
+    position: absolute;
+    text-align: center;
+    width: 170px;
+    height: 50px;
+    left: 38%;
+    top: 81%;
+    font-size : 30px;
+    display:block;
+}
+
+#finish {
+    position: absolute;
+    text-align: center;
+    width: 170px;
+    height: 50px;
+    left: 53%;
+    top: 81%;
+    font-size : 30px;
+    display:block;
 }
