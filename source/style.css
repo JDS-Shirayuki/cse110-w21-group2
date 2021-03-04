@@ -58,9 +58,17 @@ a{
     border-radius: 15px;
 }
 
+#music{
+    position: absolute;
+    top:8.5%;
+    left: 55%;
+}
+
 
 #time{
     text-align: center;
+    z-index : 1;
+    position:relative;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -76,28 +84,85 @@ a{
     font-variant-numeric: tabular-nums;
 }
 
+#number{
+    text-align: center;
+    font-size: 15px;
+    font-style: times;
+    color: #FFFFFF;
+}
+
 #timer{
     position: absolute;
     top: 40%;
     left: 50%;
+    overflow:hidden;
+    border-radius:50%;
+    width:425px;
+    height:425px;
     transform: translate(-50%, -50%);
 }
 
-#quick{
+#rate{
+    font-family: 'Roboto', sans-serif;
+    top:69%;
+    left: 32%;
+    font-size:50px; 
+    margin:10px auto;
+    border : 5px solid white; 
+    border-radius:50px;
+    width:400px;
+    height:20px;
+    overflow:hidden;
+    position:absolute;
+    display:none;
+}
+
+#progress {
+    z-index: -1;
+    background : #D54546;
+    height: 20px;
+    width: 0px;
+    position:absolute;
+    bottom:0;
+}
+
+#filler{
+    background : #81C57C;
+    height: 0px;
+    width: 425px;
+    position:absolute;
+    bottom:0;
+  }
+
+#skip{
     position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: inset 0px 4px 4px #D54546;
-    padding: 10px 50px;
-    font-size: 20px;
+    text-align: center;
+    width: 170px;
+    height: 50px;
+    left: 42%;
+    top: 730px;
+    font-size : 30px;
+    display:block;
 }
 
-#pic{
-    margin-left: -1100px;
-    margin-top: 340px;
-    position: absolute; z-index: 1;
-    zoom: 33%;
+#quote{
+    font-family: Poppins;
+    position: absolute;
+    width: 500px;
+    height: 60px;
+    left: 28%;
+    top: 600px;
+    text-align: center;
+    display:none;
+}
+
+#form_info{
+    position: absolute;
+    top: 65%;
+    left:20%;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 50px;
 }
 
 .subinfo_name{
@@ -110,32 +175,24 @@ a{
 }
 
 .subinfo{
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 .buttons{
-    background: linear-gradient(274.65deg, #D54546 1.05%, rgba(213, 69, 70, 0) 127.07%);
+    background: #FFFFFF;
     border: none;
     text-align: center;
     text-decoration: none;
     border-radius: 15px;
     font-family: Poppins;
     font-style: normal;
-    color: #FFFFFF;
+    color: #D54546;
     outline: none;
     cursor: pointer;
 }
 
 .buttons:hover{
     background-color: white;
-}
-
-#go{
-    margin-top: 40px;
-    margin-left: 70px;
-    width:170px;
-    height:50px;
-    font-size: 30px;
 }
 
 .inputbar{
@@ -183,6 +240,11 @@ input[type=radio] {
     display: none;
 }
 
+input[type=checkbox] {
+    visibility: hidden;
+    display: none;
+}
+
 input[type=radio]:checked + label{
     background-color: #D54546;
     border-radius: 50px;
@@ -196,13 +258,14 @@ input[type=range] {
     background:black;
 }
 
+
 #pomonum{
-    display: flex;
+    display: inline-flex;
     justify-content: space-between;
     background: #FFFFFF;
     border-radius: 50px;
     border:#FFFFFF;
-    width: 310px;
+    width: 180px;
     height: 37px;
     outline: none;
     padding: 0px 0px;
@@ -213,14 +276,46 @@ input[type=range] {
 }
 
 .tomato{
-    font-size: 28px;
-    margin-left: 0px;
-    padding: 0px 20px;
+    font-size: 27px;
+    padding: 0px 5px;
     line-height: 37px;
 }
 
 .tomatoradio:checked + .tomato {
     background-color: #D54546;
     border-radius: 50px;
-    padding: 0px 20px;
+    padding: 0px 5px;
+}
+
+#num_text{
+    width: 30px;
+    border-radius: 0px 50px 50px 0px;
+}
+
+
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+#or{
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+#numCus {
+    background-color: white;
+    box-shadow: inset 0 0 0px 2px #D54546;
+    margin-left: 0;
+    border-radius: 50px 0px 0px 50px;
+    padding: 0px 5px;
+}
+
+#enter_num {
+    display: inline-flex;
 }

@@ -1,10 +1,30 @@
-  let ptimer = {
+let fillerIncrement = 425/(25*60);
+let fillerHeight = 0;
+
+let nav_bar = document.getElementsByClassName('navbar')[0];
+let form = document.getElementById("form_info");
+let rate = document.getElementById("rate");
+let quote = document.getElementById("quote");
+let html = document.documentElement;
+let progress = document.getElementById('progress');
+let progress_number = document.getElementById("number");
+
+let ptimer = {
     time: null,
     go: null,
+    fillerHeight : 0,
+    
+    filler: null,
+    num_radio: null,
+    num_text: null,
+    pomo_num: 1,
+
     init: function() {
         ptimer.time = document.getElementById("time");
-        ptimer.go = document.getElementById("go");
-
+        ptimer.go = document.getElementById("skip");
+        ptimer.filler = document.getElementById("filler");
+        ptimer.num_radio = document.getElementsByName("num");
+        ptimer.num_text = document.getElementById('num_text')
         ptimer.go.addEventListener("click",ptimer.start);
         ptimer.go.disabled = false;
     },
@@ -13,7 +33,8 @@
     timer: null,
     break: false,
     now: 1500,
-    tick: function(){       
+
+    tick: function(){ 
         ptimer.now--;
         let remain = ptimer.now;
         let mins = Math.floor(remain/60);
@@ -26,39 +47,64 @@
         if (ptimer.now < 0) {
             // Pomo finish
             if (ptimer.break == false) {
+
                 ptimer.count++;
                 ptimer.break = true;
-                ptimer.time.style.borderColor = "green";
+                breakPage();
+
+                progress.style.width = (400/ptimer.pomo_num) * (ptimer.count) + 'px';
+                progress_number.innerHTML = ptimer.count + ' /  ' + ptimer.pomo_num;
                 //short break
                 if (ptimer.count % 4 != 0) {
                     ptimer.now = 300;
-                    ptimer.time.innerHTML = "05:00";
+                    ptimer.time.innerHTML = "05 : 00";
+                    fillerIncrement = 425/(5*60);
                 }
                 //long break
                 else {
                     ptimer.now = 900;
-                    ptimer.time.innerHTML = "15:00";
+                    ptimer.time.innerHTML = "15 : 00";
+                    fillerIncrement = 425/(15*60);
                 }
             }
             
             // Break finish
             else {
+                focusPage();
                 ptimer.break = false;
                 ptimer.now = 1500;
-                ptimer.time.innerHTML = "25:00";
-                ptimer.time.style.borderColor = "#D54546";
+                ptimer.time.innerHTML = "25 : 00";
+                fillerIncrement = 425/(25*60);
             }
             return;
         }
 
         ptimer.time.innerHTML = mins+" : "+secs;
+        fillerHeight = fillerHeight + fillerIncrement;
+        ptimer.filler.style.height = fillerHeight + 'px';
     },
 
     start: function() {
-        ptimer.timer = setInterval(ptimer.tick, 50);
+        for (let i = 0; i < 5; i++) {
+            if (ptimer.num_radio[i].checked) {
+                if (i != 4) {
+                    ptimer.pomo_num = i+1;
+                    this.break;
+                }
+                else {
+                    ptimer.pomo_num = ptimer.num_text.value;
+                }
+            }
+        }
+        
         ptimer.go.value = "Stop";
+        ptimer.timer = setInterval(ptimer.tick, 1000);
         ptimer.go.removeEventListener("click",ptimer.start);
         ptimer.go.addEventListener("click",ptimer.stop);
+
+        progress_number.innerHTML = 0 + ' /  ' + ptimer.pomo_num;
+
+        pomoPage();
     },
 
     stop: function() {
@@ -66,72 +112,56 @@
         ptimer.timer = null;
         ptimer.go.value = "Start";
         ptimer.now = 1500;
-        ptimer.time.innerHTML = '25:00';
+        ptimer.time.innerHTML = '25 : 00';
         ptimer.go.removeEventListener("click",ptimer.stop);
         ptimer.go.addEventListener("click", ptimer.start);
-        ptimer.time.style.borderColor = "#D54546";
-        alert('This session you completed ' + ptimer.count+ ' pomos! Congrats!');
+        
+        homePage();
+
         ptimer.count = 0; 
+        fillerHeight = 0;
+        fillerIncrement = 425/(25*60);
     }
-
-
 };
 
-let pomo1 = document.getElementById('1pomo');
-let pomo2 = document.getElementById('2pomo');
-let pomo3 = document.getElementById('3pomo');
-let pomo4 = document.getElementById('4pomo');
 
-let num1 = document.getElementById('num1');
-let num2 = document.getElementById('num2');
-let num3 = document.getElementById('num3');
-let num4 = document.getElementById('num4');
-
-function resetPomo() {
-    num1.style.borderRadius = '';
-    num2.style.borderRadius = '';
-    num3.style.borderRadius = '';
-    num4.style.borderRadius = '';
-
-    num1.style.backgroundColor = '';
-    num2.style.backgroundColor = '';
-    num3.style.backgroundColor = '';
-    num4.style.backgroundColor = '';
+function homePage() {
+    ptimer.time.style.borderColor = "#D54546";
+    html.style.background="linear-gradient(180deg, #FF8A8B 0%, #FFBFAC 100%)"
+    nav_bar.style.display='flex';
+    rate.style.display = 'none';  
+    quote.style.display = 'none';
+    form.style.display = 'grid';
+    ptimer.go.style.color="#D54546";
+    ptimer.filler.style.height = '0px';
+    ptimer.filler.style.background = '#81C57C';
+    progress.style.width = '0px';
+    progress_number.innerHTML = '0 / ' + ptimer.pomo_num;
 }
 
-pomo1.onclick = function() {
-    resetPomo();
+function pomoPage() {
+    rate.style.display = 'block';  
+    quote.style.display = 'block';
+    form.style.display = 'none';
+    nav_bar.style.display='none';
 }
 
-pomo2.onclick = function() {
-    resetPomo();
-    num1.style.backgroundColor = '#D54546';
-    num1.style.borderRadius = '50px 0px 0px 50px';
-    num2.style.borderRadius = '0px 50px 50px 0px';
-    
+function breakPage() {
+    html.style.background="linear-gradient(180deg, #A5CFA2 0%, #B7CCA4 99.99%, #FFBFAC 100%)"
+    ptimer.time.style.borderColor = "#81C57C";
+    ptimer.filler.style.background = '#D54546';
+    fillerHeight = 0;
+    progress.style.background="#81C57C";
+    ptimer.go.style.color="#81C57C";
 }
 
-pomo3.onclick = function() {
-    resetPomo();
-    num1.style.backgroundColor = '#D54546';
-    num2.style.backgroundColor = '#D54546';
-    num1.style.borderRadius = '50px 0px 0px 50px';
-    num2.style.borderRadius = '0px';
-    num3.style.borderRadius = '0px 50px 50px 0px'
+function focusPage() {
+    html.style.background="linear-gradient(180deg, #FF8A8B 0%, #FFBFAC 100%)"
+    ptimer.time.style.borderColor = "#D54546";
+    ptimer.filler.style.background = '#81C57C';
+    fillerHeight = 0;
+    progress.style.background="#D54546";
+    ptimer.go.style.color="#D54546";
 }
-
-pomo4.onclick = function() {
-    resetPomo();
-    num1.style.backgroundColor = '#D54546';
-    num2.style.backgroundColor = '#D54546';
-    num3.style.backgroundColor = '#D54546';
-    num1.style.borderRadius = '50px 0px 0px 50px';
-    num2.style.borderRadius = '0px';
-    num3.style.borderRadius = '0px';
-    num4.style.borderRadius = '0px 50px 50px 0px';
-}
-
-
 
 window.onload = ptimer.init;
-
