@@ -1,10 +1,10 @@
-## Sprint Review Meeting  03/09/2021
-# Attendance: Yichen Yang, Zhichao Liu, Guo Chen, Hang Wang, Haoyang Xie, Yunding Wu (all members were present)
-# Time: 8:00 PM, U.S. West Coast Time
-# Medium: Zoom Meeting
-# Meeting Type: Sprint Review
+# Sprint Review Meeting  03/09/2021
+Attendance: Yichen Yang, Zhichao Liu, Guo Chen, Hang Wang, Haoyang Xie, Yunding Wu (all members were present)
+Time: 8:00 PM, U.S. West Coast Time
+Medium: Zoom Meeting
+Meeting Type: Sprint Review
 
-Process review:
+# Process review:
 Feature/Layout Planning
 Design features and layouts coherent to the main (and only) goal of the timer: keep user focused, prevent any distraction
 Evaluate whether the current features/layouts are effective. If so, decide whether to modify the features/layouts or remove them completely
@@ -37,24 +37,40 @@ Team members discuss the positive and negative sides of the finished application
 Conclude difficulties of team work
 Make new plans to resolve the above negative points. A new sprint sequence starts here.
 
-Things done by the 1st sprint: 
+# Things done by the 1st sprint: 
+
 Created the user input page, and the timer page, with designed UI.
+
 In the user input page, the user can choose/enter the informations including type, note, # of pomo cycles, and click start/quick start button to begin the pomo project. 
+
 All the information that the user input will be recorded and translated to the timer page. 
+
 In the timer page, the timer will automatically run with the water animation filling up. When each cycle (25min) is completed, the timer will enter the break cycle (long or short decided by the passing cycles), and the cycle slider is added with animation.
+
 Create the transition between two pages: when the user clicks the start button in the first page, it will enter the timer page and the timer is running. When the user clicks the end button in the timer page, he/she will return to the input page. And the information of current pomo status will be displayed in a box. 
+
 Add a music display button in the top-right corner.
+
 Creating the pipeline that pushes any codes to the branch will send an email to notify the reviewer. And the code senders have to write the type, reason, details about their works.
 
-Progress since the 2nd sprint: 
+# Progress since the 2nd sprint: 
+
 Simplified the music player to avoid distraction
+
 Added button at timer-completed stage to return back to main page
+
 Added database of inspirational quotes. The space under progress bar can now automatically change quotes every minute. 
+
 Modified border animation to fit with the in-circle filler animation.
 
-Improvements between two sprints:
+# Improvements between two sprints:
+
 Improved user experience by simplifying interface and reducing distraction
+
 Assignment of tasks became more equal and reasonable
+
 Team members are more engaged in communication now
+
 Better documentation of technical work
+
 More effective usage of Internet to boost learning of html/css/js techniques
