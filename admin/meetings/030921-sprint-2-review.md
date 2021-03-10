@@ -1,8 +1,8 @@
-##Sprint Review Meeting  03/09/2021
-#Attendance: Yichen Yang, Zhichao Liu, Guo Chen, Hang Wang, Haoyang Xie, Yunding Wu (all members were present)
-#Time: 8:00 PM, U.S. West Coast Time
-#Medium: Zoom Meeting
-#Meeting Type: Sprint Review
+## Sprint Review Meeting  03/09/2021
+# Attendance: Yichen Yang, Zhichao Liu, Guo Chen, Hang Wang, Haoyang Xie, Yunding Wu (all members were present)
+# Time: 8:00 PM, U.S. West Coast Time
+# Medium: Zoom Meeting
+# Meeting Type: Sprint Review
 
 Process review:
 Feature/Layout Planning
