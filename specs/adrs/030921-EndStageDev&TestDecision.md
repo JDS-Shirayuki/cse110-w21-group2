@@ -21,3 +21,4 @@ Chosen option: "New features & test", because
 * Planned new features do not rely on each other too much. Difficulties in one feature won't block the development of the other feature.
 * Plenty of dummy features on the Internet are there for us to study and simulate (honestly, absolutly not copying!).
 * Still, team project may be graded on feature complexity. More complex features might improve the final grade of our team members.
+* Any new feature added needs to be performed perfectly. If we do many new features with certian faults, the new features lose its meaning to improve user experience. This is the reason why we still insist testing after new feature even time is pretty constrained.
