@@ -137,11 +137,7 @@ a{
     border-radius: 15px;
 }
 
-#setting{
-    font-size: 16px;
-    color: gray;
-    background: radial-gradient(301.17% 150.36% at 50.04% -31.22%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
-}
+
 
 #music{
     position: absolute;
@@ -409,7 +405,7 @@ input[type=number] {
 #cong {
     transform: translate(-50%, -50%);
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 50%;
     text-align: center;
     font-family: Poppins;
@@ -418,15 +414,11 @@ input[type=number] {
     color:#D54546;
 }
 
-#goal_finish {
-    display: none;
-}
-
 #prompt {
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    top: 50%;
+    top: 30%;
     left: 50%;
     text-align: center;
     transform: translate(-50%, -50%);
@@ -436,15 +428,41 @@ input[type=number] {
     color: black;
 }
 
+#summary {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    text-align: center;
+    font-family: Poppins;
+    border-radius: 15px;
+    background-color: white;
+    padding: 20px 50px; 
+    font-size: 30px;
+    
+}
+
+#summary_title{
+    font-weight: 600;
+    font-size: 45px;
+    color:#D54546;
+}
+
+#goal_finish {
+    display: none;
+}
+
+
+
 #return {
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    top: 70%;
+    top: 80%;
     left: 0;
     right: 0;
     text-align: center;
-    width: 400px;
+    width: 200px;
     height: 50px;
     font-size : 30px;
     display:block;
