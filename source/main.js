@@ -221,7 +221,6 @@ function setting_change () {
         document.getElementById('home').innerHTML = 'Home';
         document.getElementById('about').innerHTML = 'About';
         document.getElementById('setting').innerHTML = 'Setting';
-        document.getElementById('analyze').innerHTML = 'Analyze';
         document.getElementById('pomo_range_id').innerHTML = 'Pomo Range';
         document.getElementById('longBreak_range_id').innerHTML = 'Long Break Range';
         document.getElementById('shortBreak_range_id').innerHTML = 'Short Break Range';
@@ -250,7 +249,6 @@ function setting_change () {
         document.getElementById('home').innerHTML = '主页';
         document.getElementById('about').innerHTML = '关于';
         document.getElementById('setting').innerHTML = '设置';
-        document.getElementById('analyze').innerHTML = '分析';
         document.getElementById('pomo_range_id').innerHTML = '专注时长';
         document.getElementById('longBreak_range_id').innerHTML = '长休息';
         document.getElementById('shortBreak_range_id').innerHTML = '短休息';
@@ -284,6 +282,8 @@ function aboutPage(){
     form.style.display = 'none';
     clock.style.display='none';
     ptimer.go.style.display="none";
+    ptimer.setting.removeEventListener("click",setting_menu);
+    ptimer.setting.style.background="grey";
 }
 
 
@@ -305,6 +305,8 @@ function homePage() {
     progress.style.width = '0px';
     progress_number.innerHTML = '0 / ' + ptimer.pomo_num;
     setting_page.style.display = 'none';
+    ptimer.setting.addEventListener("click",setting_menu);
+    ptimer.setting.style.background="#D54546";
 }
 
 function pomoPage() {
