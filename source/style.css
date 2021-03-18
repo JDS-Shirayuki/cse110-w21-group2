@@ -29,18 +29,25 @@ html{
     line-height: 36px;
 }
 
+#setting{
+    padding: 5px 10px;
+    font-size: 16px;
+    color:#FFFFFF;
+    background: #D54546;
+    border-radius: 15px;
+}
+
 #setting_page {
     display: none;
     position: absolute;
-    background: linear-gradient(180deg, #FF8A8B 0%, #FFBFAC 100%);
-    border: 1px solid black;
+    background: white;
     border-radius: 45px;
     height: 300px;
     width: 250px;
-    left: 75%;
+    left: 73%;
     top: 18%;
     font-size : 16px; 
-    font-family: times;
+    font-family: Poppins;
 }
 #pomo_range_id {
     position: absolute;
@@ -100,9 +107,9 @@ html{
     position: absolute;
     text-align: center;
     color: white;
-    background: linear-gradient(274.65deg, #D54546 1.05%, rgba(213, 69, 70, 0) 127.07%);
+    background: #D54546;
     width: 96px;
-    height: 35px;
+    padding: 5px 5px;
     left: 32%;
     top: 82%; 
 }
@@ -126,15 +133,6 @@ a{
     font-size: 18px;
     color: #7F7D7D;
     text-decoration:none;
-}
-
-#analyze{
-    margin-left: 30px;
-    padding: 10px 20px;
-    font-size: 16px;
-    color:#FFFFFF;
-    background: linear-gradient(274.65deg, #D54546 1.05%, rgba(213, 69, 70, 0) 127.07%);
-    border-radius: 15px;
 }
 
 
@@ -467,12 +465,31 @@ input[type=number] {
     display:block;
 }
 
+.audioplay-object{
+    display: inline-block;
+    border-radius: 25px;
+    padding: 0px;
+    background-color: #D54546;
+}
 
-#play-pause-button{
-    font-size: 50px;
-    cursor: pointer;
-  }
+#about_us{
+    display: none;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    font-family: Poppins;
+}
 
+#team{
+    text-align: center;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+#team_info{
+    font-size: 20px;
+}
 
 /* #finish {
     position: absolute;
