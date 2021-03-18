@@ -8,6 +8,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
         <script src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+        <link rel="icon" type="image/png" href="favicon.png">
     </head>
 
     <body>
@@ -29,7 +30,7 @@
                 <div class=navbottons>
                     <a class=navbotton id=home style="color: #D54546;" href="#home">Home</a>
                     <a class=navbotton id=about href="#about">About</a>
-                    <a href="#setting" id=setting class=buttons>Setting</a>
+                    <a class=navbotton href="#setting" id=setting>Setting</a>
                     <a id=analyze href="#analyze" class=buttons>Analyze</a>
                 </div>
             </div>
@@ -57,15 +58,15 @@
                     <div class=subinfo>
                         <span class=subinfo_name id=task_type>Task Type</span><br>
                         <div id=inputtypes>
-                            <input type="radio" id="type1" name="type" value="study" checked>
+                            <input type="radio" id="type1" name="type" value="Study" checked>
                             <label id="label1" for="type1">Study</label>
-                            <input type="radio" id="type2" name="type" value="work">
+                            <input type="radio" id="type2" name="type" value="Work">
                             <label id="label2" for="type2">Work</label>
-                            <input type="radio" id="type3" name="type" value="think">
+                            <input type="radio" id="type3" name="type" value="Think">
                             <label id="label3" for="type3">Think</label>
-                            <input type="radio" id="type4" name="type" value="read">
+                            <input type="radio" id="type4" name="type" value="Read">
                             <label id="label4" for="type4">Read</label>
-                            <input type="radio" id="type5" name="type" value="cutsom">
+                            <input type="radio" id="type5" name="type" value="Play">
                             <label id="label5" for="type5">Play</label>
                         </div>
                     </div>
@@ -110,9 +111,19 @@
         <div id=goal_finish>
             <span id=cong>Congrats!</span>
             <span id=prompt>You have finished your pomo goal!
-                <br> You can now <span style="color:#D54546">return to mainpage</span> to start a new task or <span style="color:#D54546">leave the website</span>.</span>
+                </span>
             <div id = prompt_buttons>
-                <input type="button" value="Return to Mainpage" id="return" class=buttons>
+                <input type="button" value="Home" id="return" class=buttons>
+            </div>
+
+            <div id = summary>
+                <span id = summary_title>Cycle Summary</span><br>
+                <span>Task Type:&emsp;<span id=summary_type></span></span><br>
+                <br>
+                <span>Notes:&emsp;<span id=summary_notes></span></span><br>
+                <br>
+                <span>#Pomos:&emsp;<span id=summary_num></span></span>
+                <br>
             </div>
         </div>
         <script src="main.js"></script>

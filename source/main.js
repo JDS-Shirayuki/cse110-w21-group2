@@ -16,6 +16,10 @@ let long_break = 900;
 let short_break = 300;
 let isEnglish = true;
 
+let task_type = null;
+let notes = null;
+let predict_num = null;
+
 let ptimer = {
     time: null,
     go: null,
@@ -35,6 +39,7 @@ let ptimer = {
         ptimer.filler = document.getElementById("filler");
         ptimer.num_radio = document.getElementsByName("num");
         ptimer.num_text = document.getElementById('num_text');
+        ptimer.type_radio = document.getElementsByName("type");
 
         ptimer.setting = document.getElementById('setting');
         ptimer.setting.addEventListener("click", setting_menu);
@@ -121,11 +126,25 @@ let ptimer = {
                 }
             }
         }
+
+        for (let i = 0; i < 5; i++) {
+            if (ptimer.type_radio[i].checked) {
+                task_type = ptimer.type_radio[i].value;
+                this.break;
+            }
+        }
+
+        notes = document.getElementById('notes').value;
+        
+
         if (isEnglish) {
             ptimer.go.value = "Stop";
         } else {
             ptimer.go.value = "终止";
         }
+
+        
+
         ptimer.timer = setInterval(ptimer.tick, 1);
         ptimer.go.removeEventListener("click",ptimer.start);
         ptimer.go.addEventListener("click",ptimer.abort);
@@ -144,12 +163,6 @@ let ptimer = {
         fillerIncrement = 425/pomo_record;
     },
 
-    finishGoal: function() {
-        ptimer.resetTimer();
-        promptPage();
-        ptimer.go.removeEventListener("click",ptimer.abort);
-        ptimer.go.addEventListener("click", ptimer.start);
-    },
 
     abort: function() {
         ptimer.resetTimer();
@@ -184,7 +197,7 @@ function setting_change () {
     setting_page.style.display = 'none';
 
     if ((document.getElementById('language').value) == 'English') {
-        document.getElementById('logo').innerHTML = 'PomoTracker';
+        document.getElementById('logo').innerHTML = 'PomoTracker.';
         document.getElementById('home').innerHTML = 'Home';
         document.getElementById('about').innerHTML = 'About';
         document.getElementById('setting').innerHTML = 'Setting';
@@ -207,9 +220,9 @@ function setting_change () {
         document.getElementById('Pomos_id').innerHTML = '# of Pomos';
         document.getElementById('or').innerHTML = 'Or';
         document.getElementById('skip').value = 'Start';
-        document.getElementById('cong').innerHTML = 'Congrats';
-        document.getElementById('prompt').innerHTML = 'You have finished your pomo goal! <br> You can now <span style="color:#D54546">return to mainpage</span> to start a new task or <span style="color:#D54546">leave the website</span>.'
-        document.getElementById('return').value = 'Return to Mainpage';
+        document.getElementById('cong').innerHTML = 'Congrats!';
+        document.getElementById('prompt').innerHTML = 'You have finished your pomo goal!'
+        document.getElementById('return').value = 'Home';
         isEnglish = true;
 
     } else {
@@ -222,7 +235,7 @@ function setting_change () {
         document.getElementById('longBreak_range_id').innerHTML = '长休息';
         document.getElementById('shortBreak_range_id').innerHTML = '短休息';
         document.getElementById('language_id').innerHTML = '语言';
-        document.getElementById('English').innerHTML = '英文';
+        document.getElementById('English').innerHTML = 'English';
         document.getElementById('Chinese').innerHTML = '中文';
         document.getElementById('confirm_change').innerHTML = '确认';
         document.getElementById('task_type').innerHTML = '专注项目';
@@ -238,8 +251,8 @@ function setting_change () {
         document.getElementById('or').innerHTML = '或';
         document.getElementById('skip').value = '开始';
         document.getElementById('cong').innerHTML = '恭喜';
-        document.getElementById('prompt').innerHTML = '你已经完成了所有循环! <br> 你现在可以 <span style="color:#D54546">回到主页面</span> 去创建新的任务，或 <span style="color:#D54546">离开页面</span>.';
-        document.getElementById('return').value = '回到主页面';
+        document.getElementById('prompt').innerHTML = '你已经完成了你的循环目标！';
+        document.getElementById('return').value = '主页';
         isEnglish = false;
     }
 }
@@ -290,6 +303,11 @@ function promptPage() {
     goal_finish.style.display = "block";
     clock.style.display = 'none';
     ptimer.go.style.display = 'none';
+    quote.style.display = 'none';
+    rate.style.display = 'none';
+    document.getElementById('summary_type').innerHTML = task_type;
+    document.getElementById('summary_notes').innerHTML = notes; 
+    document.getElementById('summary_num').innerHTML = ptimer.pomo_num; 
 }
 
 $(function(){
