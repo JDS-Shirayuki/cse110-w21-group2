@@ -1,7 +1,7 @@
 let fillerIncrement = 425/(25*60);
 let fillerHeight = 0;
 
-let nav_buttons = document.getElementsByClassName('navbotton');
+let nav_bar = document.getElementsByClassName('navbar')[0];
 let form = document.getElementById("form_info");
 let rate = document.getElementById("rate");
 let quote = document.getElementById("quote");
@@ -15,10 +15,6 @@ let pomo_record = 1500;
 let long_break = 900;
 let short_break = 300;
 let isEnglish = true;
-let player = document.getElementsByClassName('audioplay-object')[0];
-let about = document.getElementById('about');
-let home = document.getElementById('home');
-let about_us = document.getElementById('about_us');
 
 let task_type = null;
 let notes = null;
@@ -49,9 +45,6 @@ let ptimer = {
         ptimer.setting.addEventListener("click", setting_menu);
         ptimer.setting_confirm = document.getElementById('confirm_change');
         ptimer.setting_confirm.addEventListener("click", setting_change);
-
-        about.addEventListener("click",aboutPage);
-        home.addEventListener("click",homePage);
 
         ptimer.go.addEventListener("click", ptimer.start);
         ptimer.go.disabled = false;
@@ -191,19 +184,6 @@ let ptimer = {
     }
 };
 
-function switch_nav_buttons(status){
-    if (status == "off") {
-        for (i = 0; i<3; i++){
-            nav_buttons[i].style.display = 'none';
-        }
-    }
-    else if (status == "on") {
-        for (i = 0; i<3; i++){
-            nav_buttons[i].style.display = 'inline';
-        }
-    }
-}
-
 function setting_menu () {      
     setting_page.style.display = 'flex';
 }
@@ -221,6 +201,7 @@ function setting_change () {
         document.getElementById('home').innerHTML = 'Home';
         document.getElementById('about').innerHTML = 'About';
         document.getElementById('setting').innerHTML = 'Setting';
+        document.getElementById('analyze').innerHTML = 'Analyze';
         document.getElementById('pomo_range_id').innerHTML = 'Pomo Range';
         document.getElementById('longBreak_range_id').innerHTML = 'Long Break Range';
         document.getElementById('shortBreak_range_id').innerHTML = 'Short Break Range';
@@ -242,6 +223,10 @@ function setting_change () {
         document.getElementById('cong').innerHTML = 'Congrats!';
         document.getElementById('prompt').innerHTML = 'You have finished your pomo goal!'
         document.getElementById('return').value = 'Home';
+        document.getElementById('summary_title').innerHTML = 'Cycle Summary';
+        document.getElementById('summary_type_id').innerHTML = 'Task Type:';
+        document.getElementById('summary_notes_id').innerHTML = 'Notes:';
+        document.getElementById('summary_num_id').innerHTML = '#Pomos:';
         isEnglish = true;
 
     } else {
@@ -249,6 +234,7 @@ function setting_change () {
         document.getElementById('home').innerHTML = '主页';
         document.getElementById('about').innerHTML = '关于';
         document.getElementById('setting').innerHTML = '设置';
+        document.getElementById('analyze').innerHTML = '分析';
         document.getElementById('pomo_range_id').innerHTML = '专注时长';
         document.getElementById('longBreak_range_id').innerHTML = '长休息';
         document.getElementById('shortBreak_range_id').innerHTML = '短休息';
@@ -271,49 +257,36 @@ function setting_change () {
         document.getElementById('cong').innerHTML = '恭喜';
         document.getElementById('prompt').innerHTML = '你已经完成了你的循环目标！';
         document.getElementById('return').value = '主页';
+        document.getElementById('summary_title').innerHTML = '此次总结';
+        document.getElementById('summary_type_id').innerHTML = '任务类型';
+        document.getElementById('summary_notes_id').innerHTML = '补充';
+        document.getElementById('summary_num_id').innerHTML = '次数';
         isEnglish = false;
     }
 }
 
-function aboutPage(){
-    about_us.style.display ="block";
-    about.style.color="#D54546";
-    home.style.color="#7F7D7D";
-    form.style.display = 'none';
-    clock.style.display='none';
-    ptimer.go.style.display="none";
-    ptimer.setting.removeEventListener("click",setting_menu);
-    ptimer.setting.style.background="grey";
-}
-
 
 function homePage() {
-    about_us.style.display ="none";
-    clock.style.display='block';
-    home.style.color="#D54546";
-    about.style.color="#7F7D7D";
+
     ptimer.time.style.borderColor = "rgba(240, 240, 240, 0.25)";
     html.style.background="linear-gradient(180deg, #FF8A8B 0%, #FFBFAC 100%)"
-    switch_nav_buttons('on');
+    nav_bar.style.display='flex';
     rate.style.display = 'none';  
     quote.style.display = 'none';
     form.style.display = 'grid';
-    ptimer.go.style.display = 'inline-block';
     ptimer.go.style.color="#D54546";
     ptimer.filler.style.height = '0px';
     ptimer.filler.style.background = '#47a840';
     progress.style.width = '0px';
     progress_number.innerHTML = '0 / ' + ptimer.pomo_num;
     setting_page.style.display = 'none';
-    ptimer.setting.addEventListener("click",setting_menu);
-    ptimer.setting.style.background="#D54546";
 }
 
 function pomoPage() {
     rate.style.display = 'block';  
     quote.style.display = 'block';
     form.style.display = 'none';
-    switch_nav_buttons('off');
+    nav_bar.style.display='none';
 }
 
 function breakPage() {

@@ -14,7 +14,14 @@
     <body>
 
 
-        
+        <div class="audioplay-object">
+            <div class="audioplay-button"></div>
+            <audio class="audioplay-player">
+              <source src="assets/music.mp3">
+              Your browser doesn't support &lt;audio&gt; element.
+            </audio>
+        </div>
+        <script src="https://strangecube.com/audioplay2/player/js/audioplay-2.0.0.min.js"></script>
 
 
         <div id=container>
@@ -23,24 +30,10 @@
                 <div class=navbottons>
                     <a class=navbotton id=home style="color: #D54546;" href="#home">Home</a>
                     <a class=navbotton id=about href="#about">About</a>
-                    <a class=navbotton id=setting href="#setting">Setting</a>
-                    
-                    
-                    <div class="audioplay-object">
-                        <div class="audioplay-button"></div>
-                        <audio class="audioplay-player">
-                          <source src="assets/music.mp3">
-                          Your browser doesn't support &lt;audio&gt; element.
-                        </audio>
-                    </div>
-                    <script src="https://strangecube.com/audioplay2/player/js/audioplay-2.0.0.min.js"></script>
+                    <a class=navbotton href="#setting" id=setting>Setting</a>
+                    <a id=analyze href="#analyze" class=buttons>Analyze</a>
                 </div>
             </div>
-            
-            
-
-            
-
             <div class=setting_page id=setting_page>
                 <span id="pomo_range_id"> Pomo Range </span>
                 <input type="number" min="15" max="40" step="1" value="25" id="pomo_range">
@@ -125,22 +118,20 @@
 
             <div id = summary>
                 <span id = summary_title>Cycle Summary</span><br>
-                <span>Task Type:&emsp;<span id=summary_type></span></span><br>
+                <span><span id=summary_type_id>Task Type:</span>&emsp;
+                     <span id=summary_type></span>
+                </span><br>
                 <br>
-                <span>Notes:&emsp;<span id=summary_notes></span></span><br>
+                <span><span id=summary_notes_id>Notes:</span>&emsp;
+                    <span id=summary_notes></span>
+                </span> <br>
                 <br>
-                <span>#Pomos:&emsp;<span id=summary_num></span></span>
+                <span><span id=summary_num_id>#Pomos:</span>&emsp;
+                    <span id=summary_num></span>
+                </span>
                 <br>
             </div>
-            
         </div>
-
-        <div id =about_us>
-            <p id =team>Team Name: Safety House</p>
-            <p id =team_info>We formed our group with team leader Yichen Yang, UI design Guo Chen, Software Architect Yunding Wu, Programmer Zhichao Liu, Hang Wang and Tester Haoyang Xie in winter 2021. A safe house is, in a generic sense, a secret place for sanctuary or suitable to hide persons from perceived danger. The software engineers we want to be are reliable, secure and can't be cracked. We work together to design, create and produce work that we are proud of for folks that we believe in. We try to create a relaxing and positive atmosphere. We attempt to make everyone work happily in group project and enjoy the software engineering!
-            </p>
-        </div>
-
         <script src="main.js"></script>
         <script src="tomatotes.js"></script>
     </body>  
