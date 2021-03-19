@@ -242,6 +242,10 @@ function setting_change () {
         document.getElementById('cong').innerHTML = 'Congrats!';
         document.getElementById('prompt').innerHTML = 'You have finished your pomo goal!'
         document.getElementById('return').value = 'Home';
+        document.getElementById('summary_title').innerHTML = 'Cycle Summary';
+        document.getElementById('summary_type_id').innerHTML = 'Task Type:';
+        document.getElementById('summary_notes_id').innerHTML = 'Notes:';
+        document.getElementById('summary_num_id').innerHTML = '#Pomos:';
         isEnglish = true;
 
     } else {
@@ -271,6 +275,10 @@ function setting_change () {
         document.getElementById('cong').innerHTML = '恭喜';
         document.getElementById('prompt').innerHTML = '你已经完成了你的循环目标！';
         document.getElementById('return').value = '主页';
+        document.getElementById('summary_title').innerHTML = '此次总结';
+        document.getElementById('summary_type_id').innerHTML = '任务类型';
+        document.getElementById('summary_notes_id').innerHTML = '补充';
+        document.getElementById('summary_num_id').innerHTML = '次数';
         isEnglish = false;
     }
 }
