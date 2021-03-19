@@ -1,1 +1,7 @@
 In this repository, we have 2 branches “main” and “feat”. “feat” contains newly pushed work over old contents, and “main” contains the approved merged work after intensive testing. In either branch, the directory admin contains meeting notes, group rules, and videos; source contains all our source code; specs contains decisions, pipelines, and flowcharts we made. To make a new change in our repo, you need to first take up an issue. Then someone can make a pull request to merge the new solution into the “feat” branch and close the issue. After code style reviewing and functionality testing, the change will be merged into “main” branch.
+
+When a teammate wants to make a new pull request into the “feat” branch, he/she needs to select a type of this request and give a brief description of the new code.
+After sending the pull request, the grammar checker will check whether the given code satisfies the HTML CSS and JavaScript Grammars.
+The code-review assigner will assign 2 code reviewers Zhichao and Yunding to manually
+check whether the given code satisfies the coding style rules made inside our group, or whether the given code contains intuitive problems.
+If the provided code passes both the validator and the manual check, code reviewers will push new changed to the “main” branch.
